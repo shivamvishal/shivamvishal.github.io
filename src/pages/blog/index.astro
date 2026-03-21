@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+
+// Get all blog posts and sort by date (newest first)
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<BaseLayout title="Blog" description="Articles and thoughts">
+  <div class="max-w-5xl mx-auto px-4 py-16">
+    <h1 class="text-4xl font-bold text-gray-900 mb-12">Blog</h1>
+    
+    <div class="grid gap-8">
+      {posts.map((post) => (
+        <BlogCard
+          title={post.data.title}
+          date={post.data.date}
+          description={post.data.description}
+          image={post.data.image}
+          slug={post.slug}
+        />
+      ))}
+    </div>
+  </div>
+</BaseLayout>
