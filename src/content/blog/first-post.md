@@ -2,7 +2,7 @@
 title: "Getting Started with Modern Web Development"
 date: 2026-03-21
 description: "An introduction to building fast, modern websites with the latest tools and frameworks"
-image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&h=630&fit=crop"
+image: "/images/blog/db.png"
 ---
 
 ## Introduction
