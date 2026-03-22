@@ -2,39 +2,50 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Your Name - Writer & Developer">
+<BaseLayout title="Vishal Shivam - Software Engineer">
   <div class="max-w-5xl mx-auto px-4 py-16">
     <div class="grid md:grid-cols-3 gap-12 items-start">
       <!-- Bio Section - Left Side (2 columns) -->
       <div class="md:col-span-2 space-y-4">
-        <p class="text-lg leading-relaxed text-gray-700">
-          I'm Your Name, a writer and computer scientist. I grew up in [Your Location].
+        <p class="text-base leading-relaxed text-gray-700">
+          Hey, I am Vishal—a software engineer focused on distributed systems and data infrastructure.
         </p>
 
-        <p class="text-lg leading-relaxed text-gray-700">
-          My focus is on [your focus area]. Previously, I worked on [previous work].
-          I also founded and sold [company/project].
+        <p class="text-base leading-relaxed text-gray-700">
+          Currently, I’m a Senior Engineer at Bloomberg in London,
+          where I work on data platforms—building S3-compatible storage systems
+          and high-throughput data pipelines.
+
+          I’ve also worked on Trade Order Management systems for FX and deposits
+          (hard to resist trading systems when you’re at Bloomberg).
+          I enjoy solving problems around scale, reliability, and system design.
         </p>
 
-        <p class="text-lg leading-relaxed text-gray-700">
-          Running a startup taught me that being a founder is incredibly hard, so I try
-          to support founders in any way I can.
+        <p class="text-base leading-relaxed text-gray-700">
+          Previously, I worked at Informatica (now part of Salesforce),
+          where I built a large-scale data classification engine,
+          developed a DSL called Alchemist,
+          and worked on column similarity problems at data lake scale.
         </p>
 
-        <p class="text-lg leading-relaxed text-gray-700">
-          I spend a lot of time reading (instead of working). I like books that make me
-          think and are also fun to read.
+        <p class="text-base leading-relaxed text-gray-700">
+          Outside of work, I spend time backpacking through Europe,
+          reading tech blogs and research papers,
+          experimenting with slightly questionable AI “skills,"
+          and occasionally vibe-coding clones of popular apps—mostly to avoid
+          paying for subscriptions.
         </p>
 
-        <p class="text-lg leading-relaxed text-gray-700">
-          I'm active on
-          <a href="https://github.com/yourusername" class="text-blue-600 hover:text-blue-800 underline">GitHub</a>.
-          I frequently speak at and occasionally host events.
+        <p class="text-base leading-relaxed text-gray-700">
+          I’m active on
+          <a href="https://github.com/shivamvishal" class="text-blue-600 hover:text-blue-800 underline">GitHub</a>
+          and
+          <a href="https://www.linkedin.com/in/vishal-shivam" class="text-blue-600 hover:text-blue-800 underline">LinkedIn</a>
         </p>
 
         <p class="text-lg leading-relaxed text-gray-700">
           I enjoy learning about fun technical challenges and collaborating with great teams.
-          <a href="mailto:your.email@example.com" class="text-blue-600 hover:text-blue-800 underline">Reach out</a>
+          <a href="vishalshivam76@gmail.com" class="text-blue-600 hover:text-blue-800 underline">Reach out</a>
           if you want to find a way to work together!
         </p>
       </div>
@@ -43,9 +54,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="md:col-span-1 flex justify-center">
         <div class="w-64 h-64 rounded-full overflow-hidden bg-gray-200">
           <img
-            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=512&h=512&fit=crop"
-            alt="Your Name"
+            src="/images/vishal.jpg"
+            alt="Vishal Shivam"
             class="w-full h-full object-cover"
+            style="transform: translateY(-10%) scale(1.2);"
           />
         </div>
       </div>

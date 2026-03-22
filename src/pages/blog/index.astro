@@ -20,7 +20,7 @@ const posts = (await getCollection('blog')).sort(
           date={post.data.date}
           description={post.data.description}
           image={post.data.image}
-          slug={post.slug}
+          slug={post.id}
         />
       ))}
     </div>
