@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { items, itemProgress } from '../data/list100';
+
+const symbols = { done: '✓', todo: '✗', ongoing: '~' } as const;
+
+const completed = items.reduce((sum, item) => sum + itemProgress(item), 0);
+const completedLabel = Number.isInteger(completed) ? completed : completed.toFixed(2).replace(/0$/, '');
+---
+
+<BaseLayout title="List 100" description="Things I want to do before I die">
+  <div class="max-w-3xl mx-auto px-4 py-16">
+    <h1 class="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">List 100</h1>
+    <p class="text-gray-700 dark:text-gray-300 mb-2">Things I want to do before I die.</p>
+    <p class="text-sm text-gray-600 dark:text-gray-400 mb-10">
+      {completedLabel} of {items.length} done &middot; ✓ done &middot; ✗ not yet &middot; ~ ongoing
+    </p>
+
+    <ol class="space-y-3">
+      {items.map((item, i) => (
+        <li class="flex gap-4 text-gray-800 dark:text-gray-200">
+          <span class="w-8 shrink-0 text-right text-gray-500 dark:text-gray-500">{i + 1}.</span>
+          <span
+            class:list={[
+              'w-4 shrink-0 text-center font-semibold',
+              item.status === 'done' && 'text-green-600 dark:text-green-400',
+              item.status === 'todo' && 'text-red-500 dark:text-red-400',
+              item.status === 'ongoing' && 'text-amber-500 dark:text-amber-400',
+            ]}
+            aria-label={item.status}
+          >{symbols[item.status]}</span>
+          {item.link ? (
+            <a href={item.link} class="underline hover:text-gray-900 dark:hover:text-white">{item.text}</a>
+          ) : (
+            <span>{item.text}</span>
+          )}
+          {item.current !== undefined && item.target && (
+            <span class="text-sm text-gray-500 dark:text-gray-400 self-center whitespace-nowrap">
+              {item.current}/{item.target} ({Math.round((Math.min(item.current / item.target, 1)) * 100)}%)
+            </span>
+          )}
+        </li>
+      ))}
+    </ol>
+  </div>
+</BaseLayout>
